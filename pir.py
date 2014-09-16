@@ -73,8 +73,6 @@ try:
     if Current_State==1 and Previous_State==0:
       # PIR is triggered
       start_time=time.time()
-      #localtime = time.asctime( time.localtime(time.time()) )	
-      #get_response = requests.get(url='http://onlinux.fr/tts.php?msg=Je+t\'ai+vu!')
       logging.info(' Motion detected!')
       # Record previous state
       Previous_State=1
