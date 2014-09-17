@@ -20,7 +20,7 @@
 DAEMON_USER=root
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-DAEMON=/home/pi/pir/pir.py
+DAEMON=/usr/local/bin/pir.py
 
 # The process ID of the script when it runs is stored here:
 PIDFILE=/var/run/pir.pid
