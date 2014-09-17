@@ -1,4 +1,7 @@
-<h1>Détecteur de mouvement (PIR) du Raspberry Pi intégré à la ZiBASE - Part 1/2</h1>
+<h2><a href="http://blog.onlinux.fr/?p=131" target="_blank">Voir l'article complet sur le blog</a></h2>
+
+<h2>Détecteur de mouvement (PIR) du Raspberry Pi intégré à la ZiBASE - Part 1/2</h2>
+
 Dans cet article, je vais vous présenter comment intégrer, comme périphérique virtuel sur la ZiBASE, un détecteur de mouvement connecté à un Raspberry Pi. Nous allons voir l'ensemble des étapes , depuis la connexion du détecteur (PIR) au RaspBerry Pi , la création du script python , la gestion du service pir et le scénario sur la ZiBASE qui va nous permettre d'alimenter un détecteur virtuel, qui pourra ensuite être intégré à une alarme Zibase ou être utilisé dans d'autres scénarios.<a href="http://blog.onlinux.fr/wp-content/uploads/2014/09/zibase.jpg"><img class="alignright wp-image-167 size-thumbnail" src="http://blog.onlinux.fr/wp-content/uploads/2014/09/zibase-150x150.jpg" alt="zibase" width="150" height="150" /></a><img class="alignleft wp-image-135 size-medium" src="http://blog.onlinux.fr/wp-content/uploads/2014/09/pi-motion-plate-forme-300x270.jpeg" alt="pi-motion-plate-forme" width="300" height="270" />
 
 Pour l'installation du module, j'ai suivi l'excellent article en anglais de Matt Hawkins intitulé  <a href="http://www.raspberrypi-spy.co.uk/2013/01/cheap-pir-sensors-and-the-raspberry-pi-part-1/" target="_blank">Cheap PIR Sensors and the Raspberry Pi – Part 1</a> dont je reprends les grandes lignes pour montrer comment brancher et faire fonctionner ce merveilleux petit module.
