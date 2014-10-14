@@ -15,12 +15,10 @@ import threading
 
 URL_ZIBASE = 'http://192.168.0.100/cgi-bin/domo.cgi?CMD=LM%2049'
 MOTION_ALARM_DELAY =  60
-parser = argparse.ArgumentParser(description='Motion detector script (PIR)')
-parser.add_argument('--log', '-l', dest='loglevel', help='logging level [DEBUG..CRITICAL]', default='WARNING', choices=['DEBUG','INFO','WARNING','ERROR','CRITICAL'])
 
+parser = argparse.ArgumentParser(description='PIR Motion sensor script')
+parser.add_argument('--log', '-l', dest='loglevel', help='logging level [DEBUG..CRITICAL]', default='INFO', choices=['DEBUG','INFO','WARNING','ERROR','CRITICAL'])
 args = parser.parse_args()
-print args, logging.INFO, logging.WARNING
-
 # assuming loglevel is bound to the string value obtained from the
 # command line argument. Convert to upper case to allow the user to
 # specify --log=DEBUG or --log=debug
