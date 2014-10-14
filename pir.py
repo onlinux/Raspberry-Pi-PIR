@@ -7,7 +7,7 @@
 import time
 import RPi.GPIO as GPIO
 import requests
-import logging
+import logging, argparse
 import signal
 import sys
 import threading
@@ -15,8 +15,20 @@ import threading
 
 URL_ZIBASE = 'http://192.168.0.100/cgi-bin/domo.cgi?CMD=LM%2049'
 MOTION_ALARM_DELAY =  60
+parser = argparse.ArgumentParser(description='Motion detector script (PIR)')
+parser.add_argument('--log', '-l', dest='loglevel', help='logging level [DEBUG..CRITICAL]', default='WARNING', choices=['DEBUG','INFO','WARNING','ERROR','CRITICAL'])
 
-logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', filename='/var/log/pir.log',level=logging.DEBUG)
+args = parser.parse_args()
+print args, logging.INFO, logging.WARNING
+
+# assuming loglevel is bound to the string value obtained from the
+# command line argument. Convert to upper case to allow the user to
+# specify --log=DEBUG or --log=debug
+numeric_level = getattr(logging, args.loglevel.upper(), None)
+if not isinstance(numeric_level, int):
+    raise ValueError('Invalid log level: %i' % numeric_level)
+
+logging.basicConfig(format='%(asctime)s %(levelname)s:%(message)s', filename='/var/log/pir.log',level=numeric_level)
 
 def handler(signum = None, frame = None):
     logging.debug (' Signal handler called with signal '+ str(signum) )
